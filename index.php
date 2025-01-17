@@ -203,6 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['excelFile'])) {
     <div class="mt-3">
         <?php echo $downloadLink; ?>
     </div>
+<div class="fixed-bottom"><a href="https://github.com/hjelmua/IBGO-Excel_to_iCal" class="btn btn-light btn-sm"><i class="fa-brands fa-github"></i> open source code by hjelmua</a></div>
 </div>
 
 </body>
