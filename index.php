@@ -141,6 +141,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['excelFile'])) {
         mkdir("downloads/", 0777, true);
     }
 
+    // Unique .ics file name
+    $outputFile = "downloads/hjelmuaibgo_" . time() . ".ics";
+	
     $icalFile = excelToIcal($uploadedFile, $outputFile);
     $downloadLink = "<a href='$icalFile' class='btn btn-success'><i class='fas fa-download'></i> Download .ics</a>";
 }
