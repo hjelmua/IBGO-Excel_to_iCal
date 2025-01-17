@@ -1,6 +1,6 @@
 # IBGO-Excel to iCal
 
-# We use simplexlxs https://github.com/shuchkin/simplexlsx/ 
+# We use simplexlxs
 
 Simple application that use simplexls to make .ics files from IBGO's Excel files.
 
