@@ -10,4 +10,4 @@ Simple application that use simplexls to make .ics files from IBGO's Excel files
 
 2. Download index.php
 
-3. Have a folder "uploads" and a folder "downloads" that is writeble by the server.
+3. Create an 'uploads' folder and a 'downloads' folder, ensuring both have write permissions for the server.
