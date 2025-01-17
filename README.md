@@ -5,7 +5,7 @@
 Simple application that use simplexls to make .ics files from IBGO's Excel files.
 
 # Install instructions
-1. Download https://github.com/shuchkin/simplexlsx/ 
+1. Download SimpleXLSX.php from https://github.com/shuchkin/simplexlsx/ 
 
 2. Download index.php
 
