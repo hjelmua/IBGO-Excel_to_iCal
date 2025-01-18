@@ -57,8 +57,18 @@ function excelToIcal($inputFile, $outputFile)
         $locationDetail = trim($row[4]); // Column E for additional location details
 
         // If Column E contains "7-spel", modify the Summary
-        if (stripos($locationDetail, '7-spel') !== false) {
-            $summary .= " halvplan";
+	// Handle "inomhushall 7-spel" first
+        if (stripos($locationDetail, 'inomhushall 7-spel') !== false) {
+           $summary .= " inomhushall";
+        }
+        // Handle "7-spel" if "inomhushall 7-spel" was not found
+        elseif (stripos($locationDetail, '7-spel') !== false) {
+           $summary .= " halvplan";
+        }
+
+        // Handle "5-spel"
+        if (stripos($locationDetail, '5-spel') !== false) {
+            $summary .= " 5-spelsplan";
         }
 
         // Set LOCATION (Column D and E separated by ", ")
