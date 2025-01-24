@@ -79,7 +79,7 @@ function excelToIcal($inputFile, $outputFile)
         $nyttjare = trim($row[12]);   // Column M
         $frekvens = trim($row[5]);    // Column F
        	$bokad_av = !empty($row[2]) ? trim($row[2]) : "Ingen speciell bokare"; // Default if missing
-	$meddelande = !empty($row[30]) ? trim($row[30]) : "Inget bokningsmeddelande"; // Default if missing
+	$meddelande = !empty($row[30]) ? trim($row[30]) : "Inget bokningsmeddelande"; // Default if missing AE
         $pris = trim($row[14]); // Column O (adjust if necessary)
         $pris = str_replace(',', '.', $pris); // Convert comma to dot for numeric consistency
         $pris = number_format((float)$pris, 2, '.', ''); // Ensure proper decimal format
