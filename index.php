@@ -49,7 +49,7 @@ function excelToIcal($inputFile, $outputFile)
         if ($index == 0) continue; // Skip header row
 
         // Ensure required columns exist
-        if (!isset($row[3], $row[4], $row[8], $row[9], $row[10], $row[11], $row[0], $row[17], $row[12], $row[5], $row[2])) {
+        if (!isset($row[3], $row[4], $row[8], $row[9], $row[10], $row[11], $row[0], $row[17], $row[12], $row[5], $row[30], $row[2])) {
             continue;
         }
 
@@ -79,6 +79,7 @@ function excelToIcal($inputFile, $outputFile)
         $nyttjare = trim($row[12]);   // Column M
         $frekvens = trim($row[5]);    // Column F
        	$bokad_av = !empty($row[2]) ? trim($row[2]) : "Ingen speciell bokare"; // Default if missing
+	$meddelande = !empty($row[30]) ? trim($row[30]) : "Inget bokningsmeddelande"; // Default if missing
         $pris = trim($row[14]); // Column O (adjust if necessary)
         $pris = str_replace(',', '.', $pris); // Convert comma to dot for numeric consistency
         $pris = number_format((float)$pris, 2, '.', ''); // Ensure proper decimal format
@@ -89,6 +90,7 @@ function excelToIcal($inputFile, $outputFile)
         $description .= "Nyttjare: $nyttjare\\n";
         $description .= "Frekvens: $frekvens\\n";
 	$description .= "Bokningspris: $pris\\n";
+	$description .= "Meddelande: $meddelande\\n";
         $description .= "Bokad av: $bokad_av";
 
         // Convert to proper datetime format
