@@ -87,9 +87,9 @@ function excelToIcal($inputFile, $outputFile)
         $meddelande
         );
 
-         // Truncate to 50 characters (but avoid cutting off in the middle of a word)
-         if (mb_strlen($meddelande) > 50) {
-         $meddelande = mb_substr($meddelande, 0, 47) . "..."; // Cut at 47 chars + "..."
+         // Truncate to 75 characters (but avoid cutting off in the middle of a word)
+         if (mb_strlen($meddelande) > 75) {
+         $meddelande = mb_substr($meddelande, 0, 72) . "..."; // Cut at 72 chars + "..."
          }
         $pris = trim($row[14]); // Column O (adjust if necessary)
         $pris = str_replace(',', '.', $pris); // Convert comma to dot for numeric consistency
