@@ -80,6 +80,17 @@ function excelToIcal($inputFile, $outputFile)
         $frekvens = trim($row[5]);    // Column F
        	$bokad_av = !empty($row[2]) ? trim($row[2]) : "Ingen speciell bokare"; // Default if missing
 	$meddelande = !empty($row[30]) ? trim($row[30]) : "Inget bokningsmeddelande"; // Default if missing AE
+	// Escape special characters for .ics
+        $meddelande = str_replace(
+            ['\\', "\n", "\r", ',', ';'], // Characters to escape
+            ['\\\\', '\\n', '', '\,', '\;'], // Escaped versions
+        $meddelande
+        );
+
+         // Truncate to 50 characters (but avoid cutting off in the middle of a word)
+         if (mb_strlen($meddelande) > 50) {
+         $meddelande = mb_substr($meddelande, 0, 47) . "..."; // Cut at 47 chars + "..."
+         }
         $pris = trim($row[14]); // Column O (adjust if necessary)
         $pris = str_replace(',', '.', $pris); // Convert comma to dot for numeric consistency
         $pris = number_format((float)$pris, 2, '.', ''); // Ensure proper decimal format
