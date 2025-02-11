@@ -11,3 +11,6 @@ A simple application that uses SimpleXLS to generate .ICS files from IBGO's Exce
 2. Download index.php
 
 3. Create an 'uploads' folder and a 'downloads' folder, ensuring both have write permissions for the server.
+
+
+<img width="1402" alt="Skärmavbild 2025-02-11 kl  22 50 25" src="https://github.com/user-attachments/assets/fda8b15e-87de-4bfb-bc1b-9022adf59065" />
